@@ -50,6 +50,6 @@
       
         <!-- plugman cannot merge - prepare manual merge -->
       
-        </config-file>
+       
     </platform>
 </plugin>
