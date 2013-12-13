@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.sky.plugins.ImeiPlugin"
+    version="1.1.0">
+
+    <name>ImeiPlugin</name>
+    <description>get iemi number</description>
+    <license></license>
+
+    <engines>
+        <engine name="cordova" version=">=2.9.0" />
+    </engines>    
+
+    <js-module src="www/iemi.js" name="iemi">
+        <clobbers target="cordova.plugins.iemi" />
+    </js-module>
+
+    <asset src="www/iemi.js" target="iemi.js" />
+
+   
+    <!-- android -->
+    <platform name="android">
+
+        <source-file src="src/com/sky/plugins/ImeiPlugin.java" target-dir="src/com/sky/plugins/" />
+        <!--
+        <source-file src="R.java" target-dir="src/com/google/zxing/client/android" />
+        -->
+        
+        <!--
+        <config-file target="res/xml/plugins.xml" parent="/plugins">
+            <plugin name="BarcodeScanner" value="com.phonegap.plugins.barcodescanner.BarcodeScanner"/>
+        </config-file>
+        -->
+
+        <config-file target="www/config.xml" parent="/*">
+            <feature name="ImeiPlugin">
+                <param name="android-package" value="com.sky.plugins" />
+            </feature>
+        </config-file>
+
+        
+        
+       
+
+        <!--
+            LibraryProject/res/*.*
+            search: (src/android/LibraryProject/(.+?)/[^/]+)$
+            replace: <source-file src="$1" target-dir="$2"/>
+        -->
+      
+        <!-- plugman cannot merge - prepare manual merge -->
+      
+        </config-file>
+    </platform>
+</plugin>
